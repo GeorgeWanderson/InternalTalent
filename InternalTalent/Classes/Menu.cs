@@ -10,6 +10,8 @@ namespace InternalTalent
     {
         public static void MenuPrincipal()
         {
+            Talents talent = new Talents();
+
             while (true)
             {
                 Console.WriteLine("Seja bem vindo ao Internal Talent!");
@@ -50,6 +52,5 @@ namespace InternalTalent
             }
 
         }
-
     }
 }
