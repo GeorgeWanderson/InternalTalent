@@ -10,15 +10,9 @@ namespace InternalTalent
     {
         public static void MenuPrincipal()
         {
-            Talents talent = new Talents();
-
-            while (true)
+            int option = 0;
+            while (option != 5)
             {
-                Console.WriteLine("Seja bem vindo ao Internal Talent!");
-                Console.WriteLine("Pressione ENTER para continuar: ");
-                Console.ReadKey();
-                Console.Clear();
-
                 Console.WriteLine("Selecione uma opção: ");
                 Console.WriteLine("1 - Listar talentos disponíveis");
                 Console.WriteLine("2 - Adicionar um novo Talento");
@@ -26,21 +20,28 @@ namespace InternalTalent
                 Console.WriteLine("4 - Remover Talento");
                 Console.WriteLine("5 - Sair");
 
-                int option = Convert.ToInt32(Console.ReadLine());
-
+                try
+                {
+                    option = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Opção inválidadd!");
+                    continue;
+                }
                 switch (option)
                 {
                     case 1:
-                        //ListarTalentos();
+                        Talents.ListarTalentos();
                         break;
                     case 2:
-                        //AdicionarTalentos();
+                        Talents.AdicionarTalentos();
                         break;
                     case 3:
-                        //AtualizarTalentos();
+                        Talents.AtualizarTalento();
                         break;
                     case 4:
-                        //RemoverTalento();
+                        Talents.RemoverTalento();
                         break;
                     case 5:
                         System.Environment.Exit(0);
@@ -52,5 +53,6 @@ namespace InternalTalent
             }
 
         }
+
     }
 }
